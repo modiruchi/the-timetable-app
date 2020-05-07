@@ -1,0 +1,31 @@
+@import '../../../variables';
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+
+    .container-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: $unit * 6;
+        box-shadow: 0px 0px 10px 5px $box-shadow-color;
+
+        .login-label {
+            margin-bottom: $unit * 3;
+        }
+
+        .container-details-input-container {
+            padding: $unit * 1;
+        }
+
+        .button-container {
+            padding: $unit * 2;
+        }
+    }
+}
