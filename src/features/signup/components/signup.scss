@@ -21,7 +21,14 @@
         }
 
         .container-details-input-container {
+            display: flex;
+            flex-direction: column;
             padding: $unit * 1;
+
+            .error {
+                font-size: x-small;
+                color: red;
+            }
         }
 
         .button-container {
