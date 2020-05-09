@@ -1,5 +1,11 @@
 $unit: 8px;
 $box-shadow-color: #ececec;
 
+$primary-color: rgb(7, 71, 166);;
+
 $button-color: #fff;
-$button-bg-color: rgb(7, 71, 166);
+$button-bg-color: $primary-color;
+
+$menu-hover-color: $primary-color;
+
+$border-color: $primary-color;
