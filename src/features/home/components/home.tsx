@@ -3,7 +3,7 @@ import { notesGroups } from '../../../common/data/mock-data';
 import { NavigationItem } from '../../../components/navigation/interfaces'
 import { Navigation } from '../../../components/navigation/navigation';
 import { useState } from 'react';
-import { Content } from '../../../components/navigation/content/content';
+import { Content } from '../../../components/content/content';
 import './home.scss';
 
 export const Home = () => {

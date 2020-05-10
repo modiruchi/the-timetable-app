@@ -1,0 +1,7 @@
+@import '../../variables.scss';
+
+.content-container {
+    display: flex;
+    padding: $unit * 3;
+    width: 100%;
+}

@@ -15,10 +15,13 @@
 .navigation-menu-item {
     padding: $unit;
     span {
-        cursor: pointer;
         &:hover {
             color: $menu-hover-color;
         }
+    }
+
+    label {
+        cursor: pointer;
     }
 
 }
