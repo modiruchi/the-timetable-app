@@ -5,12 +5,15 @@ import { getNotesGroup } from '../../common/data/helpers';
 import { NotesGroup } from './notes-group';
 import './content.scss';
 import { NoteValue, Note } from '../../common/data/mock-data';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 export const Content: React.FC<ContentProps> = ({ selectedNotesGroup }) => {
 
-    let notesGroup = getNotesGroup(selectedNotesGroup);
+    const notesGroup = getNotesGroup(selectedNotesGroup);
     let [stateNotesGroup, updateStateNotesGroup] = useState(notesGroup);
+
+    let selectedNotesGroupRef = useRef(selectedNotesGroup);
+    selectedNotesGroupRef.current = selectedNotesGroup;
 
     const onNoteValueEdit = (noteObj: Note, noteValue: NoteValue, event: any) => {
         noteObj.values.find((noteValueObj) => {
@@ -20,13 +23,19 @@ export const Content: React.FC<ContentProps> = ({ selectedNotesGroup }) => {
             }
             return false;
         });
-        updateStateNotesGroup({...notesGroup})
+        updateStateNotesGroup({ ...notesGroup })
     }
 
     const propsOnNoteValueAdd = (value: string, note: Note) => {
-        note.values = [...note.values, {value}];
-        updateStateNotesGroup({...notesGroup});
+        note.values = [...note.values, { value }];
+        updateStateNotesGroup({ ...notesGroup });
     }
+
+    React.useEffect(() => {
+        return () => {
+            updateStateNotesGroup(getNotesGroup(selectedNotesGroupRef.current))
+        }
+    }, [selectedNotesGroup])
 
     return (
         <div className="content-container">
