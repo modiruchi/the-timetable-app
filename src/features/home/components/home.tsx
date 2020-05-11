@@ -14,7 +14,7 @@ export const Home = () => {
 
     return (
         <div className="home-container">
-            <Navigation navigationItems={navigationItems} onMenuClick={setSelectedNotesGroup}></Navigation>
+            <Navigation navigationItems={navigationItems} onMenuClick={setSelectedNotesGroup} selectedNotesGroup={selectedNotesGroup}></Navigation>
             <Content selectedNotesGroup={selectedNotesGroup}></Content>
         </div>
     )

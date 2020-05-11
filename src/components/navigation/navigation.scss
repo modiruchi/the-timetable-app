@@ -22,6 +22,10 @@
 
     label {
         cursor: pointer;
+        &.selected {
+            color: $menu-hover-color;
+            font-weight: bold;
+        }
     }
 
 }

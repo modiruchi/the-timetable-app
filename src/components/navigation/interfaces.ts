@@ -1,6 +1,7 @@
 export interface NavigationProps {
     navigationItems: NavigationItem[];
     onMenuClick: any;
+    selectedNotesGroup: string;
 
 }
 

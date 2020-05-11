@@ -2,7 +2,7 @@ import * as React from 'react';
 import { NavigationProps } from './interfaces';
 import './navigation.scss';
 
-export const Navigation: React.FC<NavigationProps> = ({ navigationItems, onMenuClick }) => {
+export const Navigation: React.FC<NavigationProps> = ({ navigationItems, onMenuClick, selectedNotesGroup }) => {
     const onNavigationClick = (e: any) => {
         e && e.target && e.target.nodeName === 'LABEL' && onMenuClick(e.target.innerText);
     }
@@ -12,7 +12,7 @@ export const Navigation: React.FC<NavigationProps> = ({ navigationItems, onMenuC
                 {navigationItems.map((navigationItem) => {
                     return (
                         <div key={navigationItem.name} className="navigation-menu-item">
-                            <span><label>{navigationItem.displayValue}</label></span>
+                            <span><label className={`${selectedNotesGroup === navigationItem.name? 'selected' : ''}`}>{navigationItem.displayValue}</label></span>
                         </div>
                     )
                 })}

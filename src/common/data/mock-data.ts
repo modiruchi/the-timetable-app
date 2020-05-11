@@ -6,13 +6,13 @@ export const notesGroups: NotesGroup[] = [
 
             {
                 values: [{ value: 'Note stext 1' }, { value: 'Note stext 2' }],
-                color: 'red',
+                color: '#ff7eb9',
                 creationTimestamp: Date.now(),
                 priority: 1
             },
             {
                 values: [{ value: 'Note stext 2' }, { value: 'Note stext 2' }],
-                color: 'green',
+                color: '#feff9c',
                 creationTimestamp: Date.now(),
                 priority: 2
             }
@@ -27,13 +27,13 @@ export const notesGroups: NotesGroup[] = [
 
             {
                 values: [{ value: '222Note stext 1' }, { value: '222Note stext 2' }],
-                color: 'red',
+                color: '#ff7eb9',
                 creationTimestamp: Date.now(),
                 priority: 1
             },
             {
                 values: [{ value: '222Note stext 2' }, { value: '222Note stext 2' }],
-                color: 'green',
+                color: '#feff9c',
                 creationTimestamp: Date.now(),
                 priority: 2
             }
