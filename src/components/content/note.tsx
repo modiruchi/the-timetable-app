@@ -18,11 +18,10 @@ export const Note: React.FC<NoteProps> = ({ note, onNoteValueEdit, onNoteValueAd
 
     const afterTextDone = () => {
         const value = inputRef.current.value;
-        onNoteValueAdd(value, note);
-        // note.values.push({ value });
-        // note = { ...note };
-        inputRef.current.value = '';
-
+        if(value) {
+            onNoteValueAdd(value, note);
+            inputRef.current.value = '';
+        }
     }
 
     const onEdit = (event: any, noteValue: NoteValue) => {
