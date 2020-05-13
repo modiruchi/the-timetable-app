@@ -2,9 +2,9 @@ import * as React from 'react';
 
 import { ContentProps } from "./interfaces";
 import { getNotesGroup } from '../../common/data/helpers';
-import { NotesGroup } from './notes-group';
+import { NotesGroup as NotesGroupComponent } from './notes-group';
 import './content.scss';
-import { NoteValue, Note } from '../../common/data/mock-data';
+import { NotesGroup, NoteValue, Note } from '../../common/data/mock-data';
 import { useState, useRef } from 'react';
 
 export const Content: React.FC<ContentProps> = ({ selectedNotesGroup }) => {
@@ -23,12 +23,12 @@ export const Content: React.FC<ContentProps> = ({ selectedNotesGroup }) => {
             }
             return false;
         });
-        updateStateNotesGroup({ ...notesGroup })
+        updateStateNotesGroup({ ...notesGroup } as NotesGroup)
     }
 
     const propsOnNoteValueAdd = (value: string, note: Note) => {
         note.values = [...note.values, { value }];
-        updateStateNotesGroup({ ...notesGroup });
+        updateStateNotesGroup({ ...notesGroup } as NotesGroup);
     }
 
     React.useEffect(() => {
@@ -39,7 +39,7 @@ export const Content: React.FC<ContentProps> = ({ selectedNotesGroup }) => {
 
     return (
         <div className="content-container">
-            <NotesGroup notesGroup={stateNotesGroup} propsOnNoteValueEdit={onNoteValueEdit} propsOnNoteValueAdd={propsOnNoteValueAdd} />
+            <NotesGroupComponent notesGroup={stateNotesGroup} propsOnNoteValueEdit={onNoteValueEdit} propsOnNoteValueAdd={propsOnNoteValueAdd} />
         </div>
     )
 

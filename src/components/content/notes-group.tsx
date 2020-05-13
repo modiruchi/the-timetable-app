@@ -7,7 +7,7 @@ import { NoteValue, Note as INote } from '../../common/data/mock-data';
 export const NotesGroup: React.FC<NotesGroupProps> = ({ notesGroup, propsOnNoteValueEdit, propsOnNoteValueAdd }) => {
 
     const onNoteValueEdit = (event: any, noteValue: NoteValue, note: INote) => {
-        const noteObj = notesGroup.notes.find((noteObj) => {
+        const noteObj = notesGroup!.notes.find((noteObj) => {
             return noteObj === note;
         });
         propsOnNoteValueEdit(noteObj, noteValue, event);
