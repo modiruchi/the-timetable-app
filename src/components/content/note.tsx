@@ -2,25 +2,24 @@ import * as React from 'react';
 import { NoteProps } from './interfaces';
 import './note.scss';
 import { useRef } from 'react';
-import { isNullOrUndefined } from 'util';
 import { NoteValue } from '../../common/data/mock-data';
 
 
 export const Note: React.FC<NoteProps> = ({ note, onNoteValueEdit, onNoteValueAdd }) => {
-    const inputRef = useRef(null);
+    const inputRef = useRef<HTMLInputElement>(null);
     const onNoteClick = (event: any) => {
         if(event && event.target.nodeName !== 'INPUT') {
-            if (inputRef && inputRef.current !== isNullOrUndefined) {
-                inputRef!.current!.focus();
+            if (inputRef !== null) {
+                inputRef.current!.focus();
             }
         }
     }
 
     const afterTextDone = () => {
-        const value = inputRef.current.value;
+        const value = inputRef.current!.value;
         if(value) {
             onNoteValueAdd(value, note);
-            inputRef.current.value = '';
+            inputRef.current!.value = '';
         }
     }
 
