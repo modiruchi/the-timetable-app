@@ -1,11 +1,9 @@
+import { NotesGroup } from "../../common/data/mock-data";
+
 export interface NavigationProps {
-    navigationItems: NavigationItem[];
+    navigationItems: NotesGroup[];
     onMenuClick: any;
     selectedNotesGroup: string;
+    addNewGroup: any;
 
-}
-
-export interface NavigationItem {
-    name: string;
-    displayValue: string;
 }

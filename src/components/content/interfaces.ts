@@ -1,4 +1,4 @@
-import { NotesGroup, Note } from "../../common/data/mock-data";
+import { NotesGroup, INote } from "../../common/data/mock-data";
 
 export interface ContentProps {
     selectedNotesGroup: string;
@@ -6,12 +6,9 @@ export interface ContentProps {
 
 export interface NotesGroupProps {
     notesGroup: NotesGroup | undefined;
-    propsOnNoteValueEdit: Function;
-    propsOnNoteValueAdd: Function;
 }
 
 export interface NoteProps {
-    note: Note;
-    onNoteValueEdit: Function;
-    onNoteValueAdd: Function;
+    note: INote;
+    updateNotes: any;
 }

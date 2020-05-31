@@ -1,0 +1,7 @@
+@import '../../../variables.scss';
+
+.add-group-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: $unit * 2;
+}
